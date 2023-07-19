@@ -78,7 +78,7 @@ public class DesignTacoController {
                 new Ingredient("SRCR", "Sour Cream", Ingredient.Type.SAUCE)
         );*/
 
-        List<Ingredient> ingredients = ingredientRepository.findAll();
+        List<Ingredient> ingredients = (List<Ingredient>) ingredientRepository.findAll();
 
         Ingredient.Type[] types = Ingredient.Type.values();
         for (Ingredient.Type type : types) {

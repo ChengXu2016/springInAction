@@ -55,7 +55,10 @@ CREATE TABLE if not exists Taco
 
 CREATE TABLE if not exists Ingredient_Ref
 (
-    ingredient varchar
+    id
+    identity,
+    ingredient
+    varchar
 (
     4
 ) not null,

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import tacos.data.OrderRepository;
 import tacos.pojo.TacoOrder;
+import tacos.service.OrderService;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 /**
  * @author chengxu
@@ -27,9 +29,11 @@ import javax.validation.Valid;
 public class OrderController {
 
     private OrderRepository orderRepository;
+    private OrderService orderService;
 
-    public OrderController(OrderRepository orderRepository) {
+    public OrderController(OrderRepository orderRepository, OrderService orderService) {
         this.orderRepository = orderRepository;
+        this.orderService = orderService;
     }
 
     @GetMapping("/current")
@@ -46,7 +50,9 @@ public class OrderController {
         }
 
         log.info("Order submitted: {}", order);
-        orderRepository.save(order);
+        order.setPlacedAt(new Date());
+//        orderRepository.save(order);
+        orderService.saveOrder(order);
         sessionStatus.setComplete();
 
         return "redirect:/";

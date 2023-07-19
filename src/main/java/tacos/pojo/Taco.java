@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 @Data
 public class Taco {
 
-    private Long id;
-
     private Date createdAt = new Date();
 
     @NotNull
