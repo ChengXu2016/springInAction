@@ -49,6 +49,9 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/design", true)
 
                 .and()
+                .logout()
+                .logoutSuccessUrl("/login")
+                .and()
                 .build();
     }
 
