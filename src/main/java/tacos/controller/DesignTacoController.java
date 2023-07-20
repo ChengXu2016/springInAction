@@ -9,6 +9,7 @@ import tacos.data.IngredientRepository;
 import tacos.pojo.Ingredient;
 import tacos.pojo.Taco;
 import tacos.pojo.TacoOrder;
+import tacos.service.AdminService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -29,8 +30,11 @@ public class DesignTacoController {
 
     private final IngredientRepository ingredientRepository;
 
-    public DesignTacoController(IngredientRepository ingredientRepository) {
+    private AdminService adminService;
+
+    public DesignTacoController(IngredientRepository ingredientRepository, AdminService adminService) {
         this.ingredientRepository = ingredientRepository;
+        this.adminService = adminService;
     }
 
 
