@@ -51,6 +51,8 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .defaultSuccessUrl("/design", true)
 
+                .and().httpBasic()
+                
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login")
