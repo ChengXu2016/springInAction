@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    generate-unique-name: false
+    #    generate-unique-name: false
     name: tacocloud
-    url: jdbc:h2:mem:tacocloud
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://127.0.0.1:3306/tacocloud
+    #    driver-class-name: org.h2.Driver
+    username: root
+    password: 123456
 
 
 
@@ -17,4 +17,16 @@ spring:
 #      enabled: true
 #      settings:
 #        trace: true
+logging:
+  level:
+    root: info
+
 #        web-allow-others: true
+
+
+taco:
+  page-size: 20
+  strList:
+    - 123
+    - 234
+    - 789

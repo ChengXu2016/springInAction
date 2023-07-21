@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "taco.page-size",
+      "type": "java.lang.String",
+      "description": "page-size Description for taco.page-size."
+    },
+    {
+      "name": "taco.strList",
+      "type": "java.lang.String",
+      "description": "strList Description for taco.strList."
+    }
+  ]
+}

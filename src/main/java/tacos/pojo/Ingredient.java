@@ -2,6 +2,7 @@ package tacos.pojo;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -14,7 +15,7 @@ import org.springframework.data.relational.core.mapping.Table;
  */
 @Table
 @Data
-public class Ingredient {
+public class Ingredient implements Persistable {
 
     @Id
     private final String id;
@@ -24,6 +25,11 @@ public class Ingredient {
 
     @Column
     private final Type type;
+
+    @Override
+    public boolean isNew() {
+        return true;
+    }
 
     public enum Type {
         WRAP,
